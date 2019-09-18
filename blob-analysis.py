@@ -33,7 +33,7 @@ elif smoothing == "Mean 5x5":
 
 # Threshold if required
 if thresholding == "None":
-    binary = ops.run("threshold.apply", mask, 254)
+    binary = ops.run("threshold.mean", mask)
 else:
     binary = ops.run("threshold.%s" % thresholding, smoothed)
 
